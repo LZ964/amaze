@@ -1,5 +1,5 @@
 {
-  "name": "amazon-clone-v25-compliance",
+  "name": "amazon-clone-v27-production",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
