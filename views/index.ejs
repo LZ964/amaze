@@ -1,18 +1,28 @@
 
 <div style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+    <div style="background: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; border: 1px solid #ddd; text-align: center;">
+        <h1 style="margin: 0 0 10px 0; color: #131921;">Bienvenue sur Amaze</h1>
+        <p style="color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Découvrez notre sélection rigoureuse des meilleures innovations technologiques et solutions Smart Home. 
+            Nous comparons les produits les plus performants pour vous aider à bâtir un environnement connecté et intelligent.
+        </p>
+    </div>
+
     <% if (searchTerm) { %>
-        <h2 style="font-size: 1.1rem; color: #555;">Résultats pour : <strong><%= searchTerm %></strong></h2>
+        <h2 style="font-size: 1.1rem; color: #555; margin-bottom: 20px;">Résultats pour : <strong><%= searchTerm %></strong></h2>
     <% } %>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin-top: 20px;">
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 25px;">
         <% products.forEach(p => { %>
-            <div style="background: white; border: 1px solid #ddd; padding: 15px; display: flex; flex-direction: column; border-radius: 8px; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div style="background: white; border: 1px solid #ddd; padding: 15px; display: flex; flex-direction: column; border-radius: 8px; transition: transform 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
                 <div style="height: 200px; width: 100%; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; background: #fafafa; border-radius: 4px; overflow: hidden;">
-                    <img src="<%= p.image %>" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Produit+Amazon';">
+                    <img src="<%= p.image %>" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block;" onerror="this.onerror=null;this.src='https://via.placeholder.com/400x400?text=Produit+Amaze';">
                 </div>
                 <h4 style="font-size: 14px; height: 40px; overflow: hidden; margin: 0; color: #007185; line-height: 1.4;"><%= p.name %></h4>
                 <div style="margin: 20px 0 10px 0;">
                     <a href="<%= p.affiliateUrl %>" target="_blank" style="display: block; background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; padding: 10px; text-decoration: none; color: #111; font-size: 13px; font-weight: bold; text-align: center; box-shadow: 0 2px 5px rgba(213,217,217,.5);">Vérifier le prix</a>
                 </div>
+                <p style="font-size: 11px; color: #565959; margin: 0; text-align: center;">Disponible sur Amazon.ca</p>
             </div>
         <% }) %>
     </div>

@@ -2,25 +2,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body{margin:0; font-family: 'Segoe UI', Arial, sans-serif; background: #eaeded; color: #0f1111;}
-    header{background: #131921; padding: 10px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100;}
-    .logo{color: white; font-weight: bold; text-decoration: none; font-size: 24px; margin-right: 20px;}
+    header{background: #131921; padding: 12px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100;}
+    .logo{color: white; font-weight: bold; text-decoration: none; font-size: 26px; margin-right: 30px; letter-spacing: -1px;}
     .logo span{color: #ff9900;}
-    form{flex: 1; display: flex; max-width: 800px;}
+    form{flex: 1; display: flex; max-width: 700px;}
     input{width: 100%; padding: 10px 15px; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 15px;}
     button{background: #febd69; border: none; padding: 0 20px; border-radius: 0 4px 4px 0; cursor: pointer; font-size: 18px;}
-    footer{background: #232f3e; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; font-size: 13px;}
+    footer{background: #232f3e; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; font-size: 13px; border-top: 5px solid #37475a;}
+    .legal-text{max-width: 800px; margin: 0 auto; line-height: 1.8; opacity: 0.9;}
 </style>
 </head><body>
     <header>
-        <a href="/" class="logo">amazon<span>clone</span></a>
+        <a href="/" class="logo">amaze<span>.</span></a>
         <form action="/" method="GET">
-            <input type="text" name="q" placeholder="Rechercher des produits..." value="<%= typeof searchTerm !== 'undefined' ? searchTerm : '' %>" required>
+            <input type="text" name="q" placeholder="Rechercher une innovation..." value="<%= typeof searchTerm !== 'undefined' ? searchTerm : '' %>" required>
             <button type="submit">🔍</button>
         </form>
     </header>
     <%- body %>
     <footer>
-        <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
-        <p>© 2026 AmazonClone. Site de démonstration conforme aux règles Amazon Associates.</p>
+        <div class="legal-text">
+            <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.</p>
+            <p>© 2026 Amaze - Guide d'achat spécialisé en technologies connectées.</p>
+        </div>
     </footer>
 </body></html>

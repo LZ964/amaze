@@ -1,5 +1,5 @@
 {
-  "name": "amazon-clone-v27-production",
+  "name": "amaze-production",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
@@ -15,8 +15,5 @@
     "express-session": "^1.18.0",
     "mongoose": "^8.3.2",
     "connect-mongodb-session": "^3.1.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
   }
 }
