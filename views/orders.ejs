@@ -1,0 +1,40 @@
+
+        <h1 style="font-size: 28px; margin-bottom: 20px;">Vos commandes</h1>
+        <% if (orders.length === 0) { %>
+            <p>Vous n'avez passé aucune commande.</p>
+        <% } else { %>
+            <% orders.forEach(order => { %>
+                <div style="background: white; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; overflow: hidden;">
+                    <div style="background: #f0f2f2; padding: 15px; display: flex; justify-content: space-between; font-size: 12px; color: #555; border-bottom: 1px solid #ddd;">
+                        <div>
+                            <span style="display:block; text-transform: uppercase;">Commande passée</span>
+                            <span><%= order.createdAt.toLocaleDateString() %></span>
+                        </div>
+                        <div>
+                            <span style="display:block; text-transform: uppercase;">Total</span>
+                            <span><%= order.total.toFixed(2) %> $</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="display:block; text-transform: uppercase;">N° de commande</span>
+                            <span><%= order._id %></span>
+                        </div>
+                    </div>
+                    <div style="padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin: 0 0 10px 0; color: #2e7d32;"><%= order.status %></h3>
+                            <a href="/orders/<%= order._id %>/track" class="btn-amazon" style="text-decoration: none; display: inline-block;">Suivre votre colis</a>
+                        </div>
+                        <div>
+                            <% if (order.returnRequested) { %>
+                                <span style="color: #c40000; font-weight: bold;">Retour en cours</span>
+                            <% } else { %>
+                                <form action="/orders/<%= order._id %>/return" method="POST">
+                                    <button type="submit" style="background:none; border:none; color:#007185; cursor:pointer; font-size:13px;">Retourner l'article</button>
+                                </form>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    

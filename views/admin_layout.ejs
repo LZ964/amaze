@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title><%- title %></title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; display: flex; min-height: 100vh; }
+        aside { width: 240px; background-color: #232f3e; color: white; padding: 20px; }
+        aside h2 { color: #ff9900; }
+        aside ul { list-style: none; padding: 0; }
+        aside li { margin: 15px 0; }
+        aside a { color: white; text-decoration: none; }
+        main { flex-grow: 1; padding: 30px; background-color: #f3f3f3; }
+        .stat-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <aside>
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="/admin">Tableau de bord</a></li>
+            <li><a href="/admin/products">Gérer les Produits</a></li>
+            <li><a href="/admin/orders">Commandes</a></li>
+            <li><a href="/">Retour au site</a></li>
+        </ul>
+    </aside>
+    <main><%- body %></main>
+</body>
+</html>

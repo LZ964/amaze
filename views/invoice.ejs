@@ -1,0 +1,13 @@
+
+<div style="font-family: Arial; padding: 40px; border: 1px solid #eee;">
+    <h1 style="color:#ff9900;">Facture Officielle</h1>
+    <p>Commande : <%= order._id %></p>
+    <p>Statut : <%= order.status %></p>
+    <hr>
+    <h3>Articles</h3>
+    <% order.items.forEach(i => { %>
+        <p><%= i.name %> - <%= i.price %> $</p>
+    <% }) %>
+    <h2 style="text-align:right;">Total : <%= order.total %> $</h2>
+    <button onclick="window.print()">Imprimer en PDF</button>
+</div>

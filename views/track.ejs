@@ -1,0 +1,27 @@
+
+        <div class="tracking-container">
+            <h1 style="font-size: 24px; margin-bottom: 10px;">Suivi du colis</h1>
+            <p style="color: #555;">Commande #<%= order._id %></p>
+            <h2 style="color: #2e7d32; margin-top: 20px;"><%= order.status %></h2>
+            
+            <div class="tracking-bar">
+                <div class="step <%= order.trackingStep >= 1 ? 'completed' : '' %>"></div>
+                <div class="step <%= order.trackingStep >= 2 ? 'completed' : '' %>"></div>
+                <div class="step <%= order.trackingStep >= 3 ? 'completed' : '' %>"></div>
+                <div class="step <%= order.trackingStep >= 4 ? 'completed' : '' %>"></div>
+                <div class="step <%= order.trackingStep >= 5 ? 'completed' : '' %>"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 500; color: #444;">
+                <span>Commandé</span>
+                <span>Préparé</span>
+                <span>Expédié</span>
+                <span>En transit</span>
+                <span>Livré</span>
+            </div>
+            
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+                <a href="/orders" style="color: #007185; text-decoration: none;">&larr; Retour à mes commandes</a>
+            </div>
+        </div>
+    

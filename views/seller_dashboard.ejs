@@ -1,0 +1,19 @@
+
+<div style="background: white; padding: 30px; border-radius: 8px;">
+    <h1>Console Vendeur</h1>
+    <div style="background: #f0f2f2; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+        <h3>Votre Solde (après commission 15%)</h3>
+        <h2 style="color: #2e7d32;"><%= user.balance.toFixed(2) %> $</h2>
+        <button class="btn-amazon">Virement Stripe</button>
+    </div>
+    <h2>Vos produits</h2>
+    <table style="width:100%;">
+        <% products.forEach(p => { %>
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding:10px;"><%= p.name %></td>
+                <td><%= p.price %>$</td>
+                <td>Stock: <%= p.stock %></td>
+            </tr>
+        <% }) %>
+    </table>
+</div>
